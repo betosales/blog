@@ -50,8 +50,8 @@ const { headings } = await render(series);
 		</button>
 		<button
 			id="toggle-toc"
-			class="hidden md:flex z-30 mr-2 h-8 w-8 items-center flex-shrink-0 bg-accent-base/10 justify-center rounded-lg text-accent-base hover:text-accent-base/90"
-			aria-label="Table of Contents"
+			class="hidden md:flex z-30 mr-2 h-8 w-8 items-center flex-shrink-0 hover:bg-accent-base/10 justify-center rounded-lg text-accent-base hover:text-accent-base/90"
+			aria-label="Tabela de conteúdo"
 		>	
 			<Icon aria-hidden="true" class="h-6 w-6" focusable="false" name="solar:clipboard-list-bold" />
 		</button>
@@ -162,7 +162,6 @@ const { headings } = await render(series);
 		}, ANIMATION_DURATION);
 	};
 
-	// Функция для показа панели
 	const showPanel = () => {
 		seriesPanel.classList.remove("hidden");
 		seriesPanel.classList.add("block", "lg:block");
@@ -171,16 +170,14 @@ const { headings } = await render(series);
 		}, 10);
 	};
 
-	// Общий обработчик для обеих кнопок
 	const togglePanel = () => {
 		if (isPanelVisible()) {
-			hidePanel(); // Если видима, скрываем
+			hidePanel(); 
 		} else {
-			showPanel(); // Если скрыта, показываем
+			showPanel(); 
 		}
 	};
 
-	// Обработчики событий для обеих кнопок
 	if (togglePanelBtn) {
 		togglePanelBtn.addEventListener("click", togglePanel);
 	} else {

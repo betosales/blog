@@ -5,7 +5,7 @@ import { type CollectionEntry, getCollection } from "astro:content";
 const { seriesId } = Astro.props;
 const currentPath = Astro.url.pathname;
 
-const posts = await getCollection("post");
+const posts = await getCollection("posts");
 const series = await getCollection("series");
 
 // Находим серию по переданному `seriesId` указанному в посте
@@ -15,7 +15,7 @@ if (!postsSeries) {
 }
 // console.log("Post(s) Series:", postsSeries); // Debug. Логируем найденную серию
 
-let seriesPosts: CollectionEntry<"post">[] = [];
+let seriesPosts: CollectionEntry<"posts">[] = [];
 if (seriesId) {
 	seriesPosts = posts
 		.filter((p) => p.data.seriesId === seriesId)

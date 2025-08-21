@@ -9,7 +9,7 @@ import type { Plugin } from "unified";
 import { visit } from "unist-util-visit";
 
 // Supported admonition types
-const Admonitions = new Set<AdmonitionType>(["tip", "note", "important", "caution", "warning"]);
+const Admonitions = new Set<AdmonitionType>(["tip", "notes", "important", "caution", "warning"]);
 
 /** Checks if a string is a supported admonition type. */
 function isAdmonition(s: string): s is AdmonitionType {

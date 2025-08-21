@@ -4,7 +4,7 @@ import FormattedDate from "@/components/FormattedDate.astro";
 import type { HTMLTag, Polymorphic } from "astro/types";
 
 type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
-	note: CollectionEntry<"note">;
+	note: CollectionEntry<"notes">;
 	isPreview?: boolean | undefined;
 };
 

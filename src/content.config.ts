@@ -9,8 +9,8 @@ const baseSchema = z.object({
 	title: z.string().max(60),
 });
 
-const post = defineCollection({
-	loader: glob({ base: "./src/content/post", pattern: "**/*.{md,mdx}" }),
+const posts = defineCollection({
+	loader: glob({ base: "./src/content/posts", pattern: "**/*.{md,mdx}" }),
 	schema: ({ image }) =>
 		baseSchema.extend({
 			description: z.string(),
@@ -29,6 +29,7 @@ const post = defineCollection({
 				.transform((val) => new Date(val)),
 			updatedDate: z
 				.string()
+				.or(z.date())
 				.optional()
 				.transform((str) => (str ? new Date(str) : undefined)),
 			// Series
@@ -38,8 +39,8 @@ const post = defineCollection({
 		}),
 });
 
-const note = defineCollection({
-	loader: glob({ base: "./src/content/note", pattern: "**/*.{md,mdx}" }),
+const notes = defineCollection({
+	loader: glob({ base: "./src/content/notes", pattern: "**/*.{md,mdx}" }),
 	schema: baseSchema.extend({
 		description: z.string().optional(),
 		publishDate: z
@@ -53,13 +54,13 @@ const note = defineCollection({
 const series = defineCollection({
 	loader: glob({ base: "./src/content/series", pattern: "**/*.{md,mdx}" }),
 	schema: z.object({
-		id: z.string(),
+		seriesId: z.string().optional(),
 		title: z.string(),
 		description: z.string(),
 		featured: z.boolean().default(false), // Пометка для популярных серий
-	}),
+	})
 });
 // End
 
 // Series
-export const collections = { post, note, series };
+export const collections = { posts, notes, series };
