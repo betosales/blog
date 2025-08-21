@@ -19,7 +19,7 @@ export const siteConfig: SiteConfig = {
 	// Meta property, found in src/components/BaseHead.astro L:42
 	ogLocale: "pt_BR",
 	// Used to construct the meta title property found in src/components/BaseHead.astro L:11, and webmanifest name found in astro.config.ts L:42
-	title: "Beto Sales",
+	title: "O Blog do Beto",
 };
 
 // Used to generate links in both the Header & Footer.
