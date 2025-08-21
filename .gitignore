@@ -22,3 +22,13 @@ Thumbs.db
 .env.*.local
 
 node_modules
+
+#Frontmatter
+# Ignorar cache e bancos locais
+.frontmatter/database/
+.frontmatter/content-cache/
+.frontmatter/media-cache/
+
+# Versionar só configs e templates
+!.frontmatter/settings.json
+!.frontmatter/templates/
