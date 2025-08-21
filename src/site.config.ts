@@ -13,13 +13,13 @@ export const siteConfig: SiteConfig = {
 		},
 	},
 	// Used as the default description meta property and webmanifest description
-	description: "An opinionated starter theme for Astro",
+	description: "Blog de tecnologia e desenvolvimento de software, com artigos sobre arquitetura de projetos, programação e boas práticas para devs.",
 	// HTML lang property, found in src/layouts/Base.astro L:18 & astro.config.ts L:48
 	lang: "pt-BR",
 	// Meta property, found in src/components/BaseHead.astro L:42
 	ogLocale: "pt_BR",
 	// Used to construct the meta title property found in src/components/BaseHead.astro L:11, and webmanifest name found in astro.config.ts L:42
-	title: "Citrus",
+	title: "Beto Sales",
 };
 
 // Used to generate links in both the Header & Footer.
