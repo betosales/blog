@@ -5,7 +5,9 @@ description: >-
   arquitetura de projetos.
 draft: false
 publishDate: 2025-08-21T17:52:53.786Z
+date: 2025-08-21T17:52:53.786Z
 updatedDate: 2025-08-21T17:52:53.786Z
+tags: ["introducao", "hello-world"]
 ---
 
 # Olá, mundo!

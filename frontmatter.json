@@ -4,46 +4,40 @@
   "frontMatter.preview.host": "http://localhost:4321",
   "frontMatter.content.publicFolder": "public",
   "frontMatter.content.pageFolders": [
-    {
-      "title": "blog",
-      "path": "[[workspace]]/src/content/blog"
-    }
+    { "title": "blog", "path": "[[workspace]]/src/content/blog" }
   ],
+  "frontMatter.taxonomy.dateFormat": "dd/MM/yyyy",
+
+  // fallback global (ainda suportado, mas legado)
+  "frontMatter.taxonomy.dateField": "publishDate",
+  "frontMatter.taxonomy.modifiedField": "updatedDate",
+
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
       "pageBundle": false,
       "fields": [
-        {
-          "title": "title",
-          "name": "title",
-          "type": "string"
-        },
-        {
-          "title": "description",
-          "name": "description",
-          "type": "string"
-        },
+        { "title": "title", "name": "title", "type": "string" },
+        { "title": "description", "name": "description", "type": "string" },
+
         {
           "title": "publishDate",
           "name": "publishDate",
-          "type": "datetime"
+          "type": "datetime",
+          "isPublishDate": true,
+          "dateFormat": "dd/MM/yyyy"
         },
+
         {
           "title": "updatedDate",
           "name": "updatedDate",
-          "type": "datetime"
+          "type": "datetime",
+          "isModifiedDate": true,
+          "dateFormat": "dd/MM/yyyy HH:mm"
         },
-        {
-          "title": "tags",
-          "name": "tags",
-          "type": "tags"
-        },
-        {
-          "title": "draft",
-          "name": "draft",
-          "type": "draft"
-        }
+
+        { "title": "tags", "name": "tags", "type": "tags" },
+        { "title": "Rascunhos", "name": "draft", "type": "draft" }
       ]
     }
   ]
