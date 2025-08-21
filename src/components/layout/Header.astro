@@ -147,7 +147,7 @@ import { Icon } from "astro-icon/components";
 			</div>
 			-->
 
-			<div class="ml-auto w-fit">
+			<div class="hidden md:block ml-auto w-fit">
 				<div id="buttons-panel" class="top-4 md:top-8 -ml-[4.5rem] flex space-x-2">
 					<Search />
 					<ThemeToggle />
@@ -206,31 +206,30 @@ import { Icon } from "astro-icon/components";
 		</div>	
 		
 		<nav
-			aria-label="Mobile navigation menu"
-			class="text-lg absolute inset-0 flex flex-col items-center justify-center gap-y-4 text-center font-medium text-accent-two"
-			id="nav-menu-mobile"
-		>
-			<!-- Ссылки меню -->
-			{
-				menuLinks.map((link) => (
-					<a
-						aria-current={Astro.url.pathname === link.path ? "page" : false}
-						class="underline-offset-2 hover:underline"
-						data-astro-prefetch
-						href={link.path}
-					>
-						{link.title}
-					</a>
-				))
-			}
-			<!-- <a
-				class="flex h-8 items-center rounded-lg bg-accent-base/5 px-4 text-accent-base underline-offset-2 hover:bg-accent-base/10"
-				data-astro-prefetch
-				href="/series/citrus-docs"
-			>
-				Docs
-			</a> -->
-		</nav>
+  aria-label="Mobile navigation menu"
+  class="text-lg absolute inset-0 flex flex-col items-center justify-center gap-y-6 text-center font-medium text-accent-two"
+  id="nav-menu-mobile"
+>
+  <div class="w-full px-6 md:hidden">
+    <div class="mx-auto w-full max-w-md flex items-center gap-2">
+      <!-- cresce e remove quaisquer autos/margens internas -->
+      <Search class="flex-1 min-w-0 !ml-0 !mr-0 !justify-start" />
+      <ThemeToggle />
+    </div>
+  </div>
+
+  {menuLinks.map((link) => (
+    <a
+      aria-current={Astro.url.pathname === link.path ? "page" : false}
+      class="underline-offset-2 hover:underline"
+      data-astro-prefetch
+      href={link.path}
+    >
+      {link.title}
+    </a>
+  ))}
+</nav>
+
 	</div>
 </div>
 
