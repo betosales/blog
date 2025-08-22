@@ -25,13 +25,25 @@ const isProd = import.meta.env.PROD;
   <head>
 {isProd && (
     <>
+
 		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-CZPB6LDE1W"></script>
-		<script is:inline>
+		<script is:inline type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-CZPB6LDE1W"></script>
+
+		<script is:inline type="text/partytown">
 		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'G-CZPB6LDE1W');
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
+
+		gtag("consent", "default", {
+			ad_storage: "denied",
+			ad_user_data: "denied",
+			ad_personalization: "denied",
+			analytics_storage: "denied",
+		});
+
+		gtag("config", "G-CZPB6LDE1W");
 		</script>
     </>
   )}
