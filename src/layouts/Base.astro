@@ -24,18 +24,24 @@ const isProd = import.meta.env.PROD;
   lang={siteConfig.lang}
 >
   <head>
-    {isProd && GA_ID && (
-  <>
-    <!-- gtag.js -->
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', GA_ID, { anonymize_ip: true });
-    </script>
-  </>
-)}
+{isProd && GA_ID && (
+    <>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+
+      <!-- passe o valor via data-attribute -->
+      <script is:inline data-ga-id={GA_ID}>
+        (function () {
+          var GA_ID = document.currentScript && document.currentScript.dataset.gaId;
+          if (!GA_ID) return;
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', GA_ID);
+        })();
+      </script>
+    </>
+  )}
     <BaseHead
       articleDate={articleDate}
       description={description}
