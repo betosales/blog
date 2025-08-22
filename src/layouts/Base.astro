@@ -15,7 +15,6 @@ const {
   meta: { articleDate, description = siteConfig.description, ogImage, title },
 } = Astro.props;
 
-const GA_ID = import.meta.env.PUBLIC_GA_ID;
 const isProd = import.meta.env.PROD;
 ---
 
@@ -24,22 +23,16 @@ const isProd = import.meta.env.PROD;
   lang={siteConfig.lang}
 >
   <head>
-{isProd && GA_ID && (
+{isProd && (
     <>
-      <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
-
-      <!-- passe o valor via data-attribute -->
-      <script is:inline data-ga-id={GA_ID}>
-        (function () {
-          var GA_ID = document.currentScript && document.currentScript.dataset.gaId;
-          if (!GA_ID) return;
-
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', GA_ID);
-        })();
-      </script>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-CZPB6LDE1W"></script>
+		<script is:inline>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-CZPB6LDE1W');
+		</script>
     </>
   )}
     <BaseHead
