@@ -1,5 +1,5 @@
 ---
-title: Introdução e Primeiros Passos
+title: Introdução e primeiros passos a linguagem Python
 description: Conheça a história do Python, sua evolução ao longo dos anos e aprenda os primeiros passos para começar a programar.
 publishDate: 2025-08-22
 updatedDate: 2025-08-22 19:17
