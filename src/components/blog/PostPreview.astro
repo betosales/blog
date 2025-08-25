@@ -59,9 +59,9 @@ const { as: Tag = "div", post, withDesc = false } = Astro.props;
 			{post.data.tags?.length > 0 && (
 				<div class="mt-4 flex flex-wrap gap-2">
 					{post.data.tags.map((tag: string) => (
-						<span class="px-3 py-1 text-sm bg-bgColor-200 rounded-full">
+						<a class="px-3 py-1 text-sm bg-bgColor-200 rounded-full" href={`/tags/${tag}`}>
 							{tag}
-						</span>
+						</a>
 					))}
 				</div>
 			)}
